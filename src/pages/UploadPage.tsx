@@ -84,11 +84,11 @@ const UploadPage = () => {
         setAnswers(prev => ({ ...prev, [answerKey]: otherValue }));
       }
     }
-    setStep(prev => Math.min(prev + 1, totalSteps));
+    setStep((prev: number) => Math.min(prev + 1, totalSteps));
   };
 
   const handleBack = () => {
-    setStep(prev => Math.max(prev - 1, 0));
+    setStep((prev: number) => Math.max(prev - 1, 0));
   };
 
   function getOptionsForQuestion(area: string, index: number): string[] {
