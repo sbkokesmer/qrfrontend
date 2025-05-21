@@ -81,7 +81,7 @@ const UploadPage = () => {
       }
       // If "Diğer" is selected, update main answer with other text before advancing
       if (answerValue === 'Diğer' && otherValue && otherValue.trim() !== '') {
-        setAnswers(prev => ({ ...prev, [answerKey]: otherValue }));
+        setAnswers((prev: any) => ({ ...prev, [answerKey]: otherValue }));
       }
     }
     setStep((prev: number) => Math.min(prev + 1, totalSteps));
@@ -360,7 +360,7 @@ const UploadPage = () => {
                 value={answers[`${currentAnswerKey}_other`] || ''}
                 onChange={(e) => {
                   const otherValue = e.target.value;
-                  setAnswers(prev => ({ ...prev, [`${currentAnswerKey}_other`]: otherValue }));
+                  setAnswers((prev: any) => ({ ...prev, [`${currentAnswerKey}_other`]: otherValue }));
                 }}
                 placeholder="Lütfen belirtiniz"
                 style={{
