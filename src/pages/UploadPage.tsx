@@ -162,6 +162,10 @@ const UploadPage = () => {
       setStatus('Dosya eksik.');
       return;
     }
+    if (file.size > 10 * 1024 * 1024) {
+      setStatus('Dosya boyutu 10MB’ı geçmemelidir.');
+      return;
+    }
     if (!name.trim() || !phone.trim() || !email.trim()) {
       setStatus('Lütfen İsim Soyisim, Telefon ve E-posta alanlarını doldurunuz.');
       return;
@@ -293,7 +297,7 @@ const UploadPage = () => {
             borderRadius: '6px',
             marginBottom: '20px',
             width: '100%',
-            maxWidth: '12%',
+            maxWidth: '20%',
             boxSizing: 'border-box',
             textAlign: 'center',
             display: 'block',
