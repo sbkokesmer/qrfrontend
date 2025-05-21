@@ -303,6 +303,11 @@ const UploadPage = () => {
             display: 'block',
           }}
         />
+        {file && (
+          <p style={{ fontSize: '0.9rem', color: '#888', marginTop: '8px' }}>
+            Seçilen dosya: {file.name} ({(file.size / 1024).toFixed(2)} KB)
+          </p>
+        )}
         <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '20px' }}>
           <button onClick={handleBack}>Geri</button>
           <button style={{ width: '200px', maxWidth: '90vw' }} onClick={handleUpload} disabled={isUploading}>
